@@ -124,7 +124,7 @@ class StarbaseFuel extends BaseNotify
                         $notification_type = "POS";
                         $notification_title = "Low Fuel!";
                         $notification_text = "One of your starbases has only ".$pos_needs_fuel_data[0]." fuel blocks left, this will last for ".$pos_needs_fuel_data[1];
-                        $hash = BaseNotify::makeNotificationHash($super_user->id, $notification_type, $notification_title, $notification_text);
+                        $hash = BaseNotify::makeNotificationHash($pos_user->id, $notification_type, $notification_title, $notification_text);
 
                         $check = \SeatNotification::where('hash', '=', $hash)->exists();
 
